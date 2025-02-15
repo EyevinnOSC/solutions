@@ -1,0 +1,22 @@
+{
+  "name": "orchestrator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@osaas/client-core": "^0.15.1",
+    "@osaas/client-transcode": "^0.15.4",
+    "minio": "^8.0.4",
+    "ts-node": "^10.9.2"
+  }
+}
