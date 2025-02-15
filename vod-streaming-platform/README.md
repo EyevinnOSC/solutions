@@ -70,3 +70,29 @@ For example using the Minio client tool
 % mc cp osc-reel.mp4 vodsvcinput/vodsvcinput/osc-reel.mp4
 ```
 
+We will now deploy this orchestrator using the open web service Web Runner. The Web Runner
+fetches the code from a private (or public) GitHub repository so we will first create
+a repository for the orchestrator we built.
+
+```bash
+% git init
+```
+
+Add a file called `.gitignore` that contains the following.
+
+```
+dist/
+node_modules/
+```
+
+Create a GitHub repository in your GitHub account and push the code. 
+
+```bash
+% git remote add origin git@github.com:<your-git-org>/<git-repo>.git
+% git branch -M main
+% git push -u origin main
+```
+
+Then create a Web Runner instance in the Eyevinn Open Source Cloud web console.
+
+![Web Runner for Orhestrator](orchestrator.png)
