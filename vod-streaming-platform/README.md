@@ -107,3 +107,38 @@ Now everything is orchestrated in the cloud and when you upload a file to the in
 
 Now it is time to build the web video application that will fetch the list of assets from the database and using a web player to stream the assets.
 
+Create a new folder for the application and copy the files from the folder [application](application/).
+
+```bash
+% mkdir myvideoapp
+% cp -r solutions/vod-streaming-platform/application/* myvideoapp/
+```
+
+Enter the folder you created and install dependencies.
+
+```bash
+% cd myvideoapp
+% npm install
+```
+
+Build the application
+
+```bash
+% npm run build
+```
+
+Given that your personal access token is stored in the environment variable `OSC_ACCESS_TOKEN`
+you can start the application with this command.
+
+```bash
+% npm start
+```
+
+Deploy this application the same way as you deployed the orchestrator using the Web Runner.
+
+![Web Video Application](application.png)
+
+Now when the Web Runner is up and running you can click on the instance card and go to
+the web application that is now available online.
+
+![Deployed Web Video Application](deployedapp.png)
