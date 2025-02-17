@@ -15,8 +15,10 @@
   },
   "dependencies": {
     "@osaas/client-core": "^0.15.1",
+    "@osaas/client-db": "^0.5.1",
     "@osaas/client-transcode": "^0.15.4",
     "minio": "^8.0.4",
+    "nano": "^10.1.4",
     "ts-node": "^10.9.2"
   }
 }

@@ -61,7 +61,7 @@ Then you can test running the orchestrator on your local computer.
 ```
 
 It will create and setup a VOD processing pipeline with the input and output buckets required.
-A listener for the input bucket is also created.
+A listener for the input bucket is also created and a NoSQL database (CouchDB)
 
 You can test that this part works by uploading an MP4 file to the input bucket that was created.
 For example using the Minio client tool
@@ -70,7 +70,11 @@ For example using the Minio client tool
 % mc cp osc-reel.mp4 vodsvcinput/vodsvcinput/osc-reel.mp4
 ```
 
-We will now deploy this orchestrator using the open web service Web Runner. The Web Runner
+An asset with the URL to the streaming package is created and saved to the database.
+
+## Deploy orchestrator
+
+We will now deploy this orchestrator using the [open web service Web Runner](https://app.osaas.io/dashboard/service/eyevinn-web-runner). The Web Runner
 fetches the code from a private (or public) GitHub repository so we will first create
 a repository for the orchestrator we built.
 
@@ -96,3 +100,10 @@ Create a GitHub repository in your GitHub account and push the code.
 Then create a Web Runner instance in the Eyevinn Open Source Cloud web console.
 
 ![Web Runner for Orhestrator](orchestrator.png)
+
+Now everything is orchestrated in the cloud and when you upload a file to the input bucket it will automatically transcode and create a VOD package for streaming.
+
+## Building the Web Video Application
+
+Now it is time to build the web video application that will fetch the list of assets from the database and using a web player to stream the assets.
+
