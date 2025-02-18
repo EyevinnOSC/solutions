@@ -1,0 +1,12 @@
+[submodule "server-guided-ad-insertion-as-a-service/docker-testsrc-hls-live"]
+	path = server-guided-ad-insertion-as-a-service/docker-testsrc-hls-live
+	url = https://github.com/Eyevinn/docker-testsrc-hls-live
+[submodule "server-guided-ad-insertion-as-a-service/sgai-ad-proxy"]
+	path = server-guided-ad-insertion-as-a-service/sgai-ad-proxy
+	url = https://github.com/Eyevinn/sgai-ad-proxy
+[submodule "server-guided-ad-insertion-as-a-service/ad-normalizer"]
+	path = server-guided-ad-insertion-as-a-service/ad-normalizer
+	url = https://github.com/Eyevinn/ad-normalizer
+[submodule "server-guided-ad-insertion-as-a-service/test-adserver"]
+	path = server-guided-ad-insertion-as-a-service/test-adserver
+	url = https://github.com/Eyevinn/test-adserver
