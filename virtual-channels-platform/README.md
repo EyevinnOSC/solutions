@@ -104,7 +104,26 @@ Then create a Web Runner instance in the Eyevinn Open Source Cloud web console.
 
 ![Web Runner for Webhook](webhook.png)
 
-Now you have a webhook available online that your channel engine instance will use to request what to play out next.
+Now you have a webhook available online that your channel engine instance will use to request what to play out next. Take a note of the URL to the webhook, e.g. https://eyevinnlab-vcwebhook.eyevinn-web-runner.auto.prod.osaas.io/nextVod. Find the URL on the instance card of the web runner instance in the web console.
+
+![Web Runner instance for Webhook](webhook-instance.png)
 
 ## Creating a virtual channel
+
+To create a virtual channel we will use the Eyevinn Open Source Cloud command line tool.
+
+```bash
+% npx @osaas/cli create channel-engine mychannel \
+  -o type=WebHook \
+  -o url=https://eyevinnlab-vcwebhook.eyevinn-web-runner.auto.prod.osaas.io/nextVod \
+  -o opts.useDemuxedAudio=true 
+```
+
+Ths option `opts.useDemuxedAudio` instructs the engine that the VODs have separate files for audio and video which we have in this case.
+
+Navigate to the FAST Channel Engine service in Eyevinn Open Source Cloud and you should see the channel you just created.
+
+![Virtual channel example](virtual-channel.png)
+
+## Building the Web Video Application
 
