@@ -127,3 +127,54 @@ Navigate to the FAST Channel Engine service in Eyevinn Open Source Cloud and you
 
 ## Building the Web Video Application
 
+Now we can build the TV application to show this virtual channel we created. To provide the TV application with the URL to the channel we will use the Application Config Service available as an open web service.
+
+Create a new folder for the application and copy the files from the folder [application](application/).
+
+```bash
+% mkdir mytvapp
+% cp -r solutions/virtual-channels-platform/application/* mytvapp/
+```
+
+nter the folder you created and install dependencies.
+
+```bash
+% cd mytvapp
+% npm install
+```
+
+Build the application
+
+```bash
+% npm run build
+```
+
+Given that your personal access token is stored in the environment variable `OSC_ACCESS_TOKEN`
+you can start the application with this command.
+
+```bash
+% npm start
+```
+
+When the application starts up it will check for an existing application config service and if it does not exists it will create one for you.
+
+Open the web browser to http://localhost:3000 and you will see a black and empty screen. This is because have not added the URL to the channel in the configuration service yet. Navigate to the Application Config Service in the Eyevinn Open Source Cloud web console and click on the instance card.
+
+![Config service instance](config-svc-instance.png)
+
+It will open the configuration user interface. Click on the "Add New" button and enter the URL to the channel you created in a variable called `channelurl`.
+
+![Channel URL config](channel-url-config.png)
+
+Now you can reload the TV application and it will be playing the virtual TV channel that you created.
+
+![TV app](tvapp.png)
+
+## Deploy Web Video Application
+
+Deploy this application the same way as you deployed the webhook using the Web Runner open web service.
+
+Now when the Web Runner is up and running you can click on the instance card and go to
+the web application that is now available online.
+
+![Deployed Web Video Application](deployedapp.png)
