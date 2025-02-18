@@ -84,7 +84,7 @@ To create a [SGAI service](https://app.osaas.io/dashboard/service/eyevinn-sgai-a
 
 ```url
 # Ad Normalizer
-https://demo-sgai.eyevinn-ad-normalizer.auto.prod.osaas.io/api/v1/vast?dur=30
+https://demo-sgai.eyevinn-ad-normalizer.auto.prod.osaas.io/api/v1/vast
 # Original stream
 https://demo-sgai.eyevinn-docker-testsrc-hls-live.auto.prod.osaas.io/loop/master.m3u8
 ```
