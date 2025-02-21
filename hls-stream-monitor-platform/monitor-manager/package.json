@@ -1,0 +1,24 @@
+{
+  "name": "monitor-manager",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "@osaas/client-core": "^0.15.1",
+    "@osaas/client-services": "^0.9.0",
+    "cron": "^4.0.0",
+    "fastify": "^5.2.1",
+    "nano": "^10.1.4",
+    "ts-node": "^10.9.2"
+  }
+}

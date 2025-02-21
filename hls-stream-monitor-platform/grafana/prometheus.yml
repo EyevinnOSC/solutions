@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: 'hls-monitor'
+    metrics_path: '/test/metrics'
+    basic_auth:
+      username: 'myuser'
+      password: 'changeme'
+    static_configs:
+      - targets: ['eyevinnlab-myadapter.eyevinn-web-runner.auto.prod.osaas.io']
+
