@@ -1,0 +1,23 @@
+name: On push to main
+on: 
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-to-rag-bucket:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Sync to RAG bucket
+        uses: jakejarvis/s3-sync-action@v0.5.1
+        with:
+          args: --follow-symlinks --delete
+        env:
+          AWS_S3_BUCKET: 'osaas-rag'
+          AWS_ACCESS_KEY_ID: ${{ secrets.S3_AWS_ACCESS_KEY_ID  }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.S3_AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'eu-north-1'
+          DEST_DIR: 'solutions/'
